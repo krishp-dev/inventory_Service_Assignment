@@ -12,7 +12,7 @@ from app.models import (
 from app.core.security import get_password_hash, create_access_token
 
 def run_seed(db: Session) -> dict:
-    print("🌱 Running idempotent seed for ABC Retail...")
+    print("[INFO] Running idempotent seed for ABC Retail...")
 
     # 1. Organization
     org = db.query(Organization).filter_by(name="ABC Retail").first()
@@ -208,7 +208,7 @@ def run_seed(db: Session) -> dict:
     }
 
     print("\n" + "="*70)
-    print("✅ SEED COMPLETED SUCCESSFULLY")
+    print("[SUCCESS] SEED COMPLETED SUCCESSFULLY")
     print("="*70)
     print("DEMO CREDENTIALS & JWT TOKENS:")
     print(f"1. Admin (Full access across all locations):")
